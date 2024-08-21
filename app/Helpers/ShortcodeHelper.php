@@ -33,7 +33,14 @@ class ShortcodeHelper
 		  hbspt.forms.create({
 			region: "'.$region.'",
 			portalId: "'.$portalId.'",
-			formId: "'.$formId.'"
+			formId: "'.$formId.'",
+			onFormSubmit: function ($form) {
+			},
+			onFormReady: function ($form) {
+				setUtmInHubSpotInput();
+			},
+			onFormSubmitted: function () {
+			}
 		  });
 		</script>';
 		

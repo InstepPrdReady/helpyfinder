@@ -4,7 +4,14 @@
   hbspt.forms.create({
 	region: "<?php echo $hsdata['region']; ?>",
 	portalId: "<?php echo $hsdata['portalId']; ?>",
-	formId: "<?php echo $hsdata['formId']; ?>"
+	formId: "<?php echo $hsdata['formId']; ?>",
+	onFormSubmit: function ($form) {
+	},
+	onFormReady: function ($form) {
+		setUtmInHubSpotInput();
+	},
+	onFormSubmitted: function () {
+	}
   });
 </script>
 @endif

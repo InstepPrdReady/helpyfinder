@@ -109,8 +109,8 @@
         <link href="{{ asset('css/libs/fontawesome.min.css')}}" type="text/css" rel="stylesheet">
         <link href="{{ asset('css/front/owl.carousel.min.css')}}" type="text/css" rel="stylesheet">
         <link href="{{ asset('css/front/instep.css') }}" type="text/css" rel="stylesheet">
-
-     
+        
+        
 
         @yield('styles')
 
@@ -145,8 +145,8 @@
 
 
 
-    
-    
+<script type='text/javascript' src="{{ asset('js/front/common_script.js') }}"></script>
+
 
 </head>
 <body class="common-front @if($currentLang->rtl == 1) rtl @endif" @if($currentLang->rtl == 1) dir="rtl" @endif>

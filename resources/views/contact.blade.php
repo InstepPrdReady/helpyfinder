@@ -94,9 +94,11 @@
 
               {!! NoCaptcha::renderJs() !!}
 
-              
+              <div style="width: 100% !important; border: 0;" class="Contact-hubspotForm">
+              @shortcode('hubspotForm')
+              </div>
 
-              <form method="POST" action="{{route('contactPost')}}">
+              <form method="POST" action="{{route('contactPost')}}" style="display:none;">
                  
                  @csrf
                  <div class="row">
@@ -180,3 +182,28 @@
 
 @endsection
 
+
+<style>
+  .contact-us-map iframe {
+    width: 100%;
+}
+.input input, .input textarea {
+    color: #fff;
+    background-color: #222227 !important;
+    background-clip: padding-box;
+    border: 1px solid #222227;
+    border-radius: 12px;
+}
+.hbspt-form .hs-form {
+    width: 100%;
+    border: 1px solid #222227;
+    padding: 20px;
+    border-radius: 12px;
+    box-sizing: border-box;
+}
+
+form#hsForm_27fca3ab-e7cb-47a9-a4d0-d4173328f3fa label {
+    color: #ffffff !important;
+}
+
+</style>
