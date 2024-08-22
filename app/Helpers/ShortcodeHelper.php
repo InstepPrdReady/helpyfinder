@@ -51,7 +51,7 @@ class ShortcodeHelper
 					type: "POST",
 					url: "/contact-email-send",
 					data: formData,
-					success: function(resultData) { alert("Save Complete"); }
+					success: function(resultData) {}
 				});
 			},
 			onFormSubmitted: function ($form) {

@@ -1,4 +1,4 @@
-<div id="hubspotFormContainer"></div>
+<!-- <div id="hubspotFormContainer"></div> -->
 <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
 @if($hsdata['hs_switch'])
 <script>
@@ -7,7 +7,7 @@
 	region: "<?php echo $hsdata['region']; ?>",
 	portalId: "<?php echo $hsdata['portalId']; ?>",
 	formId: "<?php echo $hsdata['formId']; ?>",
-	target: '#hubspotFormContainer',
+	//target: '#hubspotFormContainer',
 	onFormSubmit: function ($form) {
 		var formData = {
 			email: $form.find('input[name="email"]').val(),
@@ -25,15 +25,10 @@
 			type: "POST",
 			url: "/contact-email-send",
 			data: formData,
-			success: function(resultData) { alert("Save Complete"); }
+			success: function(resultData) {}
 		});
 	},
-	onFormSubmitted: function (request, response) {
-
-		console.log('onFormSubmitted');
-		console.log(request);
-		// console.log(response);
-		// var submittedData = $form.serializeArray();
+	onFormSubmitted: function () {
 	}
   });
 </script>
