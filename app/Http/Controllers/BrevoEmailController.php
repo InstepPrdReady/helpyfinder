@@ -20,11 +20,11 @@ class BrevoEmailController extends Controller
         $recp_name = $firstname . " " . $lastname;
         $rec_message = $request->message;
 
-        $email_sent = $this->emailService->sendEmail($recp_email, $recp_name, 'Contact Form', $rec_message);
-        if ($email_sent) {
-             echo "Email sent successfully";
-        } else {
-            echo "There is problem to send Email";
-        }
+        // $email_sent = $this->emailService->sendEmail($recp_email, $recp_name, 'Contact Form', $rec_message);
+        // if ($email_sent) {
+        //      echo "Email sent successfully";
+        // } else {
+        //     echo "There is problem to send Email";
+        // }
     }
 }
