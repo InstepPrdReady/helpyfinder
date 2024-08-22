@@ -52,7 +52,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost/quin'),
+    'url' => env('APP_URL', 'http://localhost/helpyfinder'),
 
     'asset_url' => env('ASSET_URL', null),
 

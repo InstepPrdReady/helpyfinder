@@ -35,6 +35,9 @@ return [
         'client_secret' => 'c2ce7f93c2a56dde7950b827091582e4',
         'redirect' => 'http://cms.instpulse.com/auth/facebook/callback',
     ],
-
+    
+    'brevo' => [
+        'api_key' => env('BREVO_API_KEY'),
+    ],
 
 ];

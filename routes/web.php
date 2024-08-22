@@ -27,7 +27,7 @@ use App\Http\Controllers\BlogSettingController;
 use App\Http\Controllers\ContactSettingController;
 use App\Http\Controllers\HeaderFooterSettingController;
 use App\Http\Controllers\DashboardController;
-
+use App\Http\Controllers\BrevoEmailController;
 
 /*
 |--------------------------------------------------------------------------
@@ -67,6 +67,7 @@ Route::group(['middleware' => 'setlang'], function () {
     Route::get('/blog', [HomeController::class, 'blog'])->name('blog');
     Route::get('/contact', [HomeController::class, 'contact'])->name('contact');
     Route::post('/contact', [HomeController::class, 'contactPost'])->name('contactPost');
+    Route::post('/contact-email-send', [BrevoEmailController::class, 'sendContactQueryEmail']);
 
     Route::get('auth/facebook', [SocialController::class, 'facebookRedirect']);
 

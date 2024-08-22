@@ -35,11 +35,26 @@ class ShortcodeHelper
 			portalId: "'.$portalId.'",
 			formId: "'.$formId.'",
 			onFormSubmit: function ($form) {
+				var formData = {
+					email: $form.find("input[name=\"email\"]").val(),
+					firstname: $form.find("input[name=\"firstname\"]").val(),
+					lastname: $form.find(\"input[name="lastname"]\").val(),
+					message: $form.find("textarea[name=\"message\"]").val(),
+					_token: $("meta[name=\"csrf-token\"]").attr("content")
+				};
+				$.ajaxSetup({
+					headers: {
+						"X-CSRF-TOKEN": $("meta[name=\csrf-token\"]").attr("content")
+					}
+				});
+				$.ajax({
+					type: "POST",
+					url: "/contact-email-send",
+					data: formData,
+					success: function(resultData) { alert("Save Complete"); }
+				});
 			},
-			onFormReady: function ($form) {
-				setUtmInHubSpotInput();
-			},
-			onFormSubmitted: function () {
+			onFormSubmitted: function ($form) {
 			}
 		  });
 		</script>';

@@ -147,7 +147,6 @@
 
 <script type='text/javascript' src="{{ asset('js/front/common_script.js') }}"></script>
 
-
 </head>
 <body class="common-front @if($currentLang->rtl == 1) rtl @endif" @if($currentLang->rtl == 1) dir="rtl" @endif>
     
