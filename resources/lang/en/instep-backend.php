@@ -239,6 +239,7 @@ return [
     'enable_disable_ogg' => 'Enable or disable OGgraph',
     'enable_disable_anali' => 'Enable or disable analytics', 
     'tracking_code' => 'Analytics Tracking Code',
+    'gtm_tracking_code' => 'GTM Tracking Code',
     'enable_disable_schema' => 'Enable or disable SchemaORG',
 
 

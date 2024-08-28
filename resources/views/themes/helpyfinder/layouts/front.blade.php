@@ -56,8 +56,19 @@
 
         gtag('config', '{{$setting->analytics}}');
     </script>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','{{$setting->gtm_analytics}}');</script>
+    <!-- End Google Tag Manager -->
     
     @endif
+
+
+
 
     @if($setting->facebook_pixel_switch == 1)
 
@@ -143,6 +154,13 @@
 
 </head>
 <body class="body-dark theme-color-4">
+
+    @if($setting->analytics_switch == 1)
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id={{$setting->gtm_analytics}}"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+    @endif
 
     @if($setting->maintenance_status == 0) 
 

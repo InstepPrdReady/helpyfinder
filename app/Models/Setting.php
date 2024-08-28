@@ -25,6 +25,7 @@ class Setting extends Model
         'facebook_pixel',
         'facebook_pixel_switch',
         'analytics',
+        'gtm_analytics',
         'analytics_switch',
         'hs_switch',
         'hs_region',

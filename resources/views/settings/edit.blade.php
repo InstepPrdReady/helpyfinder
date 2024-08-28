@@ -199,6 +199,11 @@
                                         
                                         <strong>{{clean( trans('instep-backend.tracking_code') , array('Attr.EnableID' => true))}}</strong>
                                         <input type="text" name="analytics" value="{{$setting->analytics}}" class="form-control">
+
+                                        <br>
+                                        
+                                        <strong>{{clean( trans('instep-backend.gtm_tracking_code') , array('Attr.EnableID' => true))}}</strong>
+                                        <input type="text" name="gtm_analytics" value="{{$setting->gtm_analytics}}" class="form-control">
                                         
                                     </div>
                                 </div>
