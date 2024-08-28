@@ -71,7 +71,7 @@ class HomeController extends Controller
         $data['testimonials'] = Testimonial::where('language_id', $lang_id)->get();
         $data['posts'] = Post::where('language_id', $lang_id)->get();
 
-        return view('home', compact('langs'), $data);
+        return view('themes/helpyfinder/pages/home', compact('langs'), $data);
     }
     public function about()
     {   
