@@ -43,7 +43,7 @@ class PageController extends Controller
 
         $data['lang_id'] = $lang_id;
 
-        return view('page.page-index', $data, compact('langs'));
+        return view('themes.helpyfinder.page.page-index', $data, compact('langs'));
     }
 
     public function index_custom(Request $request)
@@ -71,7 +71,7 @@ class PageController extends Controller
         }
         
         //return $data['home'];
-        return view('page.page-custom', $data, compact('langs'));
+        return view('themes.helpyfinder.page.page-custom', $data, compact('langs'));
     }
 
 
@@ -82,7 +82,7 @@ class PageController extends Controller
         $lang = Language::where('code', $request->language)->first();
         $lang_id = $lang->id;
 
-        return view('page.page-create', compact('langs', 'lang_id'));
+        return view('themes.helpyfinder.page.page-create', compact('langs', 'lang_id'));
     }
 
     /**
@@ -114,7 +114,7 @@ class PageController extends Controller
 
     public function edit(Page $page)
     {
-        return view('page.page-edit',compact('page'));
+        return view('themes.helpyfinder.page.page-edit',compact('page'));
     }
     /**
      * Update the specified resource in storage.
@@ -185,14 +185,13 @@ class PageController extends Controller
 
         $page = Page::whereSlug($slug)->where('language_id', $lang_id)->first();
 
-        //shortcode work start
-        $page_body = $page->body;
-        $content = \App\Helpers\ShortcodeHelper::renderShortcodes($page_body);
-        $page->body = $content;
-        //echo "<pre>";print_r($page->body);
-
         if(!empty($page)) {
-            return View::make('page', $data, compact('langs'))->with('page', $page);
+            //shortcode work start
+            $page_body = $page->body;
+            $content = \App\Helpers\ShortcodeHelper::renderShortcodes($page_body);
+            $page->body = $content;
+
+            return View::make('themes/helpyfinder/pages/page', $data, compact('langs'))->with('page', $page);
         } else {
             abort(404);
         }

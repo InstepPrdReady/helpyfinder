@@ -166,7 +166,7 @@ class PostController extends Controller
 
 
         if(!empty($article)) {
-            return View::make('article', $data, compact('langs'))->with('post', $article);
+            return View::make('themes/helpyfinder/pages/article', $data, compact('langs'))->with('post', $article);
         } else {
             abort(404);
         }

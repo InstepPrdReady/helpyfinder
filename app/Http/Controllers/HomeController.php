@@ -26,6 +26,9 @@ use App\Http\Requests\ContactFormRequest;
 use Mail;
 use Validator;
 use DB;
+use Illuminate\Support\Collection;
+use Illuminate\Pagination\Paginator;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 class HomeController extends Controller
 {
@@ -55,12 +58,8 @@ class HomeController extends Controller
 
         $lang_id = $currentLang->id;
 
-        
-        
         $langs = Language::all();
         
-        
-
         $data['sliders'] = Slider::where('language_id', $lang_id)->get();
         $data['menus'] = Menu::where('language_id', $lang_id)->get();
         $data['setting'] = Setting::find($lang_id);
@@ -85,10 +84,8 @@ class HomeController extends Controller
         $lang_id = $currentLang->id;
         $langs = Language::all();
 
-
         $members = Member::all();
         $clients = Client::all();
-
 
         $data['testimonials'] = Testimonial::where('language_id', $lang_id)->get();
         $data['headerfooter'] = HeaderFooterSetting::find($lang_id);
@@ -96,18 +93,17 @@ class HomeController extends Controller
         $data['aboutsetting'] = AboutSetting::find($lang_id);
         $data['menus'] = Menu::where('language_id', $lang_id)->get();
 
-        return view('about', $data, compact('members','clients', 'langs'));
+        return view('themes/helpyfinder/pages/about', $data, compact('members','clients', 'langs'));
     }
 
     public function show_slug_about($slug = 'home')
     {
         $page = AboutSetting::whereSlug($slug)->first();
         if(!empty($page)) {
-            return View::make('page')->with('page', $page);
+            return View::make('themes/helpyfinder/pages/page')->with('page', $page);
         } else {
             abort(404);
         }
-        
     }
 
     public function portfolio()
@@ -122,7 +118,6 @@ class HomeController extends Controller
         $lang_id = $currentLang->id;
         $langs = Language::all();
 
-
         $data['headerfooter'] = HeaderFooterSetting::find($lang_id);
         $data['setting'] = Setting::find($lang_id);
         $data['menus'] = Menu::where('language_id', $lang_id)->get();
@@ -130,7 +125,7 @@ class HomeController extends Controller
         $data['portfoliosettings'] = PortfolioSetting::find($lang_id);
         $data['project_categories'] = ProjectCategory::where('language_id', $lang_id)->get();
         
-        return view('portfolio', $data, compact('langs'));
+        return view('themes/helpyfinder/pages/portfolio', $data, compact('langs'));
     }
     public function blog()
     {
@@ -148,8 +143,17 @@ class HomeController extends Controller
         $data['menus'] = Menu::where('language_id', $lang_id)->get();
         $data['posts'] = Post::where('language_id', $lang_id)->get();
         $data['blogsettings'] = BlogSetting::find($lang_id);
+        $blogs = $data['posts'];
 
-        return view('blog', $data, compact('langs'));
+        $blogsCollection = collect($blogs);
+        $perPage = 10;
+        $currentPage = Paginator::resolveCurrentPage('page');
+        $currentPageItems = $blogsCollection->slice(($currentPage - 1) * $perPage, $perPage)->all();
+        $paginatedBlogs = new LengthAwarePaginator($currentPageItems, $blogsCollection->count(), $perPage, $currentPage);
+        $paginatedBlogs->setPath(route('blog'));
+        $data['posts'] = $paginatedBlogs;
+
+        return view('themes/helpyfinder/pages/blog', $data, compact('langs'));
     }
     
     public function pricing()
@@ -175,7 +179,6 @@ class HomeController extends Controller
 
     public function contactPost(Request $request){
 
-
         $messages = [
             'g-recaptcha-response.required' => 'You must check the reCAPTCHA.',
             'g-recaptcha-response.captcha' => 'Captcha error! try again later or contact site admin.',
@@ -191,25 +194,21 @@ class HomeController extends Controller
         ], $messages);
  
         if ($validator->fails()) {
-            return back()
-                        ->withErrors($validator)
-                        ->withInput();
+            return back()->withErrors($validator)->withInput();
         }
 
-
-
-
         Mail::send('email', [
-                'name' => $request->get('name'),
-                'email' => $request->get('email'),
-                'phone' => $request->get('phone'),
-                'budget' => $request->get('budget'),
-                'comment' => $request->get('comment') ],
+            'name' => $request->get('name'),
+            'email' => $request->get('email'),
+            'phone' => $request->get('phone'),
+            'budget' => $request->get('budget'),
+            'comment' => $request->get('comment') 
+        ],
                
-                function ($message) {
-                        $message->from('contact@instep.com');
-                        $message->to('contact@instep.com', 'Your Name')
-                        ->subject('Your Website Contact Form');
+        function ($message) {
+            $message->from('contact@instep.com');
+            $message->to('contact@instep.com', 'Your Name')
+            ->subject('Your Website Contact Form');
         });
         return back()->with('success', 'Thanks for contacting me, I will get back to you soon!');
     }
@@ -232,13 +231,6 @@ class HomeController extends Controller
         $data['menus'] = Menu::where('language_id', $lang_id)->get();
         $data['contactsetting'] = ContactSetting::find($lang_id);
 
-        return view('contact', $data, compact('clients', 'langs'));
+        return view('themes/helpyfinder/pages/contact', $data, compact('clients', 'langs'));
     }
-
-
-
-
-
-
-
 }

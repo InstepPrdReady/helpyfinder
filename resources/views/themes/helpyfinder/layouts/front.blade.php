@@ -25,8 +25,8 @@
     <meta name="contact" content="{{$setting->contact}}" />
 
     <meta name="revisit-after" content="7 Days" />
-    <meta name="robots" content="index, follow" />
-    <meta name="googlebot" content="index, follow" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="googlebot" content="noindex, nofollow" />
     <meta name="subjects" content="{{$setting->title}}" />
     <meta name="classification" content="{{$setting->title}}" />
 
@@ -47,84 +47,52 @@
 
     @if($setting->analytics_switch == 1)
 
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id={{$setting->analytics}}"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id={{$setting->analytics}}"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
 
-        gtag('config', '{{$setting->analytics}}');
-    </script>
+            gtag('config', '{{$setting->analytics}}');
+        </script>
 
-    <!-- Google Tag Manager -->
-    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','{{$setting->gtm_analytics}}');</script>
-    <!-- End Google Tag Manager -->
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','{{$setting->gtm_analytics}}');</script>
+        <!-- End Google Tag Manager -->
     
     @endif
 
-
-
-
     @if($setting->facebook_pixel_switch == 1)
 
-    <!-- Facebook Pixel Code -->
-    <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '{{$setting->facebook_pixel}}');
-    fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id={{$setting->facebook_pixel}}&ev=PageView&noscript=1"
-    /></noscript>
-    <!-- End Facebook Pixel Code -->
+        <!-- Facebook Pixel Code -->
+        <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '{{$setting->facebook_pixel}}');
+        fbq('track', 'PageView');
+        </script>
+        <noscript><img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id={{$setting->facebook_pixel}}&ev=PageView&noscript=1"
+        /></noscript>
+        <!-- End Facebook Pixel Code -->
     
     @endif
     
     <!-- Favicon -->
-    <link rel="shortcut icon" href="{{$setting->favicon}}" type="image/x-icon">
-    <link rel="icon" href="{{$setting->favicon}}" type="image/x-icon">
+    <!-- <link rel="shortcut icon" href="{{$setting->favicon}}" type="image/x-icon">
+    <link rel="icon" href="{{$setting->favicon}}" type="image/x-icon"> -->
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-
-    
-    @if($currentLang->rtl == 1) 
-        <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
-    @else 
-        <link href="{{$setting->font}}" rel="stylesheet">
-    @endif
-
-    @if($setting->maintenance_status == 0) 
-
-        @if($setting->loader_status == 1) 
-            <script type='text/javascript' src="{{ asset('js/front/pace.min.js') }}" id='pace-js'></script>
-            <script> setTimeout(function () {Pace.stop();},4500);</script>
-        @endif
-
-     @endif
-
-
-
-        @yield('styles')
-
-        @if($currentLang->rtl == 1) 
-            <link href="{{ asset('css/front/rtl.css') }}" type="text/css" rel="stylesheet">
-        @endif
-
-
-       
 
 <!-- Favicon -->
 <link rel="shortcut icon" href="{{ asset('themes/helpyfinder/assets/images/logo/fav-4.png') }}" type="image/x-icon">
@@ -224,18 +192,6 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Contact</a>
                             </li>
-                            <!-- <li class="nav-item">
-                                <a class="nav-link toggle" href="#blogs">Blog<i class="fal fa-plus"></i></a>
-                                <ul class="menu-dropdown">
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="blogs.html">Blogs</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="blog-details.html">Blog Details</a>
-                                    </li>
-                                </ul>
-                            </li> -->
-                            
                         </ul>
                     </div>
                 </nav>
