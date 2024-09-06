@@ -370,6 +370,61 @@
                                 </div>
 
 
+                                 <!-- Notification Panel -->
+                                 <div class="col-xs-12 col-sm-12 col-md-12">
+                                    <div class="form-group">
+                                        <strong>Notification Panel</strong>
+
+                                        <div class="form-check">
+                                          <input class="form-check-input" type="radio" name="np_switch" id="np_switch1" value="1" 
+                                            @if($setting->np_switch == 1) checked @endif>
+                                          <label class="form-check-label" for="np_switch1"> Enable  </label>
+                                        </div>
+                                        <div class="form-check">
+                                          <input class="form-check-input" type="radio" name="np_switch" id="np_switch0" value="0" 
+                                            @if($setting->np_switch == 0) checked @endif>
+                                          <label class="form-check-label" for="np_switch0"> Disable  </label>
+                                        </div>
+                                        <br>
+
+                                        <strong>Text</strong>
+                                        <input type="text" name="np_text" value="{{$setting->np_text}}" class="form-control">
+                                        <br>
+                                        <strong>Text Color</strong>
+                                        <input type="color" name="np_text_color" value="{{$setting->np_text_color}}" class="form-control">
+                                        <br>
+
+                                        <strong>CTA Text</strong>
+                                        <input type="text" name="np_cta_text" value="{{$setting->np_cta_text}}" class="form-control">
+                                        <br>
+                                        <strong>CTA Url</strong>
+                                        <input type="text" name="np_cta_url" value="{{$setting->np_cta_url}}" class="form-control">
+                                        <br>
+
+                                        <strong>CTA Target</strong>
+                                        <div class="form-check">
+                                          <input class="form-check-input" type="radio" name="np_cta_target" id="np_cta_target1" value="0" 
+                                            @if($setting->np_cta_target == 0) checked @endif>
+                                          <label class="form-check-label" for="np_cta_target1"> Self  </label>
+                                        </div>
+                                        <div class="form-check">
+                                          <input class="form-check-input" type="radio" name="np_cta_target" id="np_cta_target0" value="1" 
+                                            @if($setting->np_cta_target == 1) checked @endif>
+                                          <label class="form-check-label" for="np_cta_target0"> Blank  </label>
+                                        </div>
+                                        <br>
+                                        
+                                        <strong>CTA Text Color</strong>
+                                        <input type="color" name="np_cta_text_color" value="{{$setting->np_cta_text_color}}" class="form-control">
+                                        <br>
+
+                                        <strong>Notification bg color</strong>
+                                        <input type="color" name="np_nbg_color" value="{{$setting->np_nbg_color}}" class="form-control">
+                                        <br>
+                                    
+                                    </div>
+                                </div>
+                                <!-- Notification Panel -->
 
 
                                

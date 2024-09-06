@@ -43,6 +43,16 @@ class Setting extends Model
         'loader_color',
         'maintenance_status',
         'maintenance_text',
+
+        'np_switch',
+        'np_text',
+        'np_text_color',
+        'np_cta_text',
+        'np_cta_url',
+        'np_cta_target',
+        'np_cta_text_color',
+        'np_nbg_color'
+
     ];
 
     public function photo(){
