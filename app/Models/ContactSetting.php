@@ -46,10 +46,7 @@ class ContactSetting extends Model
 
     	'title',
     	'iframe_txt',
-
-
-
+		
+		'custom_html_content'
  	];
-
-
 }

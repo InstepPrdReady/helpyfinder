@@ -324,6 +324,36 @@
                         </div>
                         <!-- SEO -->
 
+                        <!-- Custom html -->
+                        <div class="card shadow mb-4">
+                            <div class="card-header py-3">
+                                <h6 class="m-0 font-weight-bold text-dark">Custom html</h6>
+                            </div>
+                            <div class="card-body">
+                                <form action="{{route('contact-setting.update', $setting->id)}}" method="POST" enctype="multipart/form-data">
+                                    @csrf
+                                    @method('PUT')
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <strong>Custom html above footer </strong>
+                                                <textarea name="custom_html_content" class="form-control">{{$setting->custom_html_content}}</textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-12 col-md-12 text-right">
+                                            <button type="submit" class="btn btn-primary">{{clean( trans('instep-backend.update') , array('Attr.EnableID' => true))}}</button>
+                                        </div>
+                                    </div>
+
+                                </form>
+
+                            </div>
+                        </div>
+                        <!-- Custom html -->
+
 
                 		
                 	</div>

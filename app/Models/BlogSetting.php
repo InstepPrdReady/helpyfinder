@@ -22,8 +22,7 @@ class BlogSetting extends Model
 
 
     	'html_sidebar1',
-    	'html_sidebar2'
-
-
+    	'html_sidebar2',
+		'html_page_content'
  	];
 }

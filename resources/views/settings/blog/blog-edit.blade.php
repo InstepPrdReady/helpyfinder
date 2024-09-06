@@ -167,6 +167,37 @@
                         </div>
                         <!-- SEO -->
 
+                         <!-- html above footer -->
+                         <div class="card shadow mb-4">
+                            <div class="card-header py-3">
+                                <h6 class="m-0 font-weight-bold text-dark">Custom Html</h6>
+                            </div>
+                            <div class="card-body">
+                                <form action="{{route('blog-setting.update', $setting->id)}}" method="POST" enctype="multipart/form-data">
+                                    @csrf
+                                    @method('PUT')
+
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <strong>Custom Html After Blogs</strong>
+                                                <textarea name="html_page_content" class="form-control" rows="6">{{clean( $setting->html_page_content, array('Attr.EnableID' => true))}}</textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-xs-12 col-sm-12 col-md-12 text-right">
+                                            <button type="submit" class="btn btn-primary">{{clean( trans('instep-backend.update') , array('Attr.EnableID' => true))}}</button>
+                                        </div>
+                                    </div>
+
+                                </form>
+
+                            </div>
+                        </div>
+                        <!--  html -->
+
 
                 		
                 	</div>

@@ -144,7 +144,6 @@ class PostController extends Controller
     public function show_slug($slug = 'home')
     {
 
-
         if (session()->has('lang')) {
             $currentLang = Language::where('code', session()->get('lang'))->first();
         } else {
@@ -159,11 +158,11 @@ class PostController extends Controller
         $data['blogsettings'] = BlogSetting::find($lang_id);
         $data['menus'] = Menu::where('language_id', $lang_id)->get();
 
+        $data['recent_posts'] = Post::where('language_id', $lang_id)->orderBy('id', 'desc')->limit(2)->get();
+
+        $data['post_categories'] =  Category::where('language_id', $lang_id)->orderBy('id', 'desc')->limit(10)->get();
 
         $article = Post::whereSlug($slug)->where('language_id', $lang_id)->first();
-
-
-
 
         if(!empty($article)) {
             return View::make('themes/helpyfinder/pages/article', $data, compact('langs'))->with('post', $article);

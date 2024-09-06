@@ -93,6 +93,13 @@
     <!-- <link rel="shortcut icon" href="{{$setting->favicon}}" type="image/x-icon">
     <link rel="icon" href="{{$setting->favicon}}" type="image/x-icon"> -->
 
+<!-- Inline Styles -->
+<style>
+    @if($setting->custom_css)
+        {!! $setting->custom_css !!}
+    @endif
+</style>
+
 
 <!-- Favicon -->
 <link rel="shortcut icon" href="{{ asset('themes/helpyfinder/assets/images/logo/fav-4.png') }}" type="image/x-icon">
@@ -154,7 +161,7 @@
                 <!-- Mobile Logo -->
                 <div class="logo">
                     <a href="#" target="_self" title="HelpyFinder">
-                        <img src="{{ asset('themes/helpyfinder/assets/images/logo/logo-4.png') }}" alt="Brand logo">
+                        <img src="{{ asset('themes/helpyfinder/assets/images/logo/logo.svg') }}" alt="Brand logo">
                     </a>
                 </div>
                 <!-- Menu toggle button -->
@@ -171,26 +178,25 @@
                 <nav class="navbar navbar-expand-lg">
 
                     <!-- Navigation items -->
-                    <div class="collapse navbar-collapse">
+                    <div class="collapse navbar-collapse container">
 
-                        <ul id="mainMenu" class="navbar-nav mobile-item mx-auto align-items-xl-center">
-
-                            <li class="nav-item logo">
-                                <a class="navbar-brand nav-link" href="#" target="_self" title="HelpyFinder">
-                                    <img src="{{ asset('themes/helpyfinder/assets/images/logo/logo-big.png') }}" alt="Brand Logo">
+                    <a class="navbar-brand nav-link logo" href="/" target="_self" title="HelpyFinder">
+                                    <img src="{{ asset('themes/helpyfinder/assets/images/logo/logo.svg') }}" alt="Brand Logo">
                                 </a>
+                        <ul id="mainMenu" class="navbar-nav mobile-item align-items-xl-center">
+
+                           
+                            <li class="nav-item">
+                                <a href="/" class="nav-link toggle">Home </a>
                             </li>
                             <li class="nav-item">
-                                <a href="#home" class="nav-link toggle">Home </a>
+                                <a class="nav-link" href="/about-us">About Us</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">About Us</a>
+                                <a class="nav-link" href="/blog">Blog</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Blog</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Contact</a>
+                                <a class="nav-link" href="/contact">Contact</a>
                             </li>
                         </ul>
                     </div>
@@ -209,10 +215,10 @@
                 <div class="row justify-content-between">
                     <div class="col-lg-3 col-md-6 col-sm-12">
                         <div class="footer-widget" data-aos="fade-up" data-aos-delay="100">
-                            <div class="navbar-brand">
-                                <a href="#" target="_self" title="Link">
-                                    <img class="lazyload blur-up" src="{{ asset('themes/helpyfinder/assets/images/placeholder.png') }}"
-                                        data-src="{{ asset('themes/helpyfinder/assets/images/logo/logo-4.png') }}" alt="Brand Logo">
+                            <div class="navbar-brand footer-logo">
+                                <a href="/" target="_self" title="Link">
+                                    <img class="lazyload blur-up" src="{{ asset('themes/helpyfinder/assets/images/logo/logo.svg') }}"
+                                        data-src="{{ asset('themes/helpyfinder/assets/images/logo/logo.svg') }}" alt="Brand Logo">
                                 </a>
                             </div>
                             <p>Indignation and dislike men who are so beguiled and demoralized by the charms of pleasure
@@ -233,7 +239,7 @@
                                     <a href="#" target="_self" title="link">Business</a>
                                 </li>
                                 <li>
-                                    <a href="#" target="_self" title="link">Privacy</a>
+                                    <a href="/privacy-policy" target="_self" title="link">Privacy Policy</a>
                                 </li>
                             </ul>
                         </div>
@@ -262,7 +268,7 @@
                             <h5>Explore</h5>
                             <ul class="footer-links">
                                 <li>
-                                    <a href="#" target="_self" title="link">About Us</a>
+                                    <a href="/about-us" target="_self" title="link">About Us</a>
                                 </li>
                                 <li>
                                     <a href="#" target="_self" title="link">Our Mission</a>
@@ -271,7 +277,7 @@
                                     <a href="#" target="_self" title="link">How It Work</a>
                                 </li>
                                 <li>
-                                    <a href="#" target="_self" title="link">Policy</a>
+                                    <a href="/terms-conditions" target="_self" title="link">Terms & Conditions</a>
                                 </li>
                             </ul>
                         </div>
@@ -280,12 +286,12 @@
                         <div class="footer-widget" data-aos="fade-up" data-aos-delay="200">
                             <h5>Download App</h5>
                             <div class="btn-groups">
-                                <a href="#" class="btn btn-img radius-sm size-sm" title="App Store"
+                                <a href="https://apps.apple.com/us/app/helpyfinder/id1565616389" class="btn btn-img radius-sm size-sm" title="App Store"
                                     target="_blank">
                                     <img class="lazyload blur-up" src="{{ asset('themes/helpyfinder/assets/images/placeholder.png') }}"
                                         data-src="{{ asset('themes/helpyfinder/assets/images/app-store.png') }}" alt="App Store">
                                 </a>
-                                <a href="#" class="btn btn-img radius-sm size-sm" title="Play Store"
+                                <a href="https://play.google.com/store/apps/details?id=com.helpyfinder" class="btn btn-img radius-sm size-sm" title="Play Store"
                                     target="_blank">
                                     <img class="lazyload blur-up" src="{{ asset('themes/helpyfinder/assets/images/placeholder.png') }}"
                                         data-src="{{ asset('themes/helpyfinder/assets/images/play-store.png') }}" alt="App Store">
@@ -345,6 +351,12 @@
     <!-- Main script JS -->
     <script src="{{ asset('themes/helpyfinder/assets/js/script.js') }}"></script>
 
+    @if($setting->custom_css)
+        <script type="text/javascript">
+            {!! $setting->custom_js !!} //blade / php dynamic functionality
+        </script>
+    @endif
+    
     @yield('scripts')
 
     @endif

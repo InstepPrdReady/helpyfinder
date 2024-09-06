@@ -795,7 +795,7 @@ body {
   background-color: var(--bg-white);
 }
 .logo img{
-  max-width: 120px;
+  max-width: 200px;
 }
 
 a {
@@ -3169,6 +3169,13 @@ Lazyload CSS
     color: var(--text-dark);
   }
 }
+
+@media (max-width: 767px) {
+  .logo img {
+    max-width: 160px !important;
+  }
+}
+
 body.mobile-menu-active {
   overflow: hidden;
 }
@@ -3366,10 +3373,16 @@ body.mobile-menu-active {
 .hero-banner.hero-banner-4 {
   padding-top: 120px;
   padding-bottom: 60px;
+  position: relative;
 }
 .hero-banner.hero-banner-4 .banner-image {
   -webkit-animation: moveUpDown 5s infinite;
           animation: moveUpDown 5s infinite;
+}
+
+.helpy-hero-content{
+  position: relative;
+  z-index: 99;
 }
 
 .hero-banner.hero-banner-5 {
@@ -3690,6 +3703,7 @@ body.mobile-menu-active {
     About CSS
 ----------------------------------------- */
 .about-area {
+  margin-top: 100px;
   position: relative;
   overflow: hidden;
 }
@@ -4717,6 +4731,9 @@ body.mobile-menu-active {
 .footer-area .footer-links li:not(:last-child) {
   margin-bottom: 14px;
 }
+.navbar-brand.footer-logo a img {
+  width: 200px;
+}
 @media (max-width: 575.98px) {
   .footer-area .footer-links li:not(:last-child) {
     margin-bottom: 10px;
@@ -4831,6 +4848,11 @@ body.mobile-menu-active {
 }
 .footer-2 .copy-right-area .copy-right-content *, .footer-3 .copy-right-area .copy-right-content * {
   color: var(--text-white);
+}
+.footer-area .social-link a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* -----------------------------------------
@@ -5023,6 +5045,9 @@ body.mobile-menu-active {
 }
 .blog-area.blog-5 .card:hover .card-content {
   background-color: rgba(var(--color-primary-rgb), 0.9);
+}
+.blog-details-area .item-single {
+  background: #0a0b1c !important;
 }
 
 /* -----------------------------------------
@@ -5860,6 +5885,12 @@ Authentication CSS
 .contact-area .color-8 .icon {
   background: rgba(179, 205, 227, 0.06);
   color: #B3CDE3;
+}
+.contact-area .card {
+  width: 100%;
+}
+.contact-area .card .card-text p a {
+  word-break: break-all;
 }
 
 /* -----------------------------------------
