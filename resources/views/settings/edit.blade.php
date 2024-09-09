@@ -387,6 +387,13 @@
                                         </div>
                                         <br>
 
+                                        <strong>Start Date and Time</strong>
+                                        <input type="datetime-local" name="np_start_datetime" value="{{$setting->np_start_datetime}}" class="form-control">
+                                        <br>
+                                        <strong>End Date and Time</strong>
+                                        <input type="datetime-local" name="np_end_datetime" value="{{$setting->np_end_datetime}}" class="form-control">
+                                        <br>
+
                                         <strong>Text</strong>
                                         <input type="text" name="np_text" value="{{$setting->np_text}}" class="form-control">
                                         <br>

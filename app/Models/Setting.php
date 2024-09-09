@@ -51,8 +51,9 @@ class Setting extends Model
         'np_cta_url',
         'np_cta_target',
         'np_cta_text_color',
-        'np_nbg_color'
-
+        'np_nbg_color',
+        'np_start_datetime',
+        'np_end_datetime'
     ];
 
     public function photo(){

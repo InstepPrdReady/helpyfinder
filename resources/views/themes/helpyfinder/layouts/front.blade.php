@@ -2,7 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
 
-    @php $setting = App\Models\Setting::find($currentLang->id); @endphp
+    @php $setting = App\Models\Setting::find($currentLang->id); use Carbon\Carbon; @endphp
     <!-- Page Title -->
     <title>@yield('title')</title>
     @if($setting->loader_status == 1) 
@@ -437,14 +437,28 @@
         <!-- Preloader end -->
 
 <!-- Notification Panel -->
+
+
+
+
 @if($setting->np_switch == "1")
-    <div class="notification_panel" style="background:{!! $setting->np_nbg_color !!}">
-        <p class="mb-0 p-2 fs-18" style="text-align: center; color:{!! $setting->np_text_color !!}">{!! $setting->np_text !!}
-            <a data-navelement="pencilbanner" data-pagesection="top nav" href="{!! $setting->np_cta_url !!}" target="{{$setting->np_cta_target === 1 ? "_blank" : "_self"}}" style="color:{!! $setting->np_cta_text_color !!}">
-                <span><u><b>{!! $setting->np_cta_text !!}</b></u></span></a>
-    </p>
-        <span class="npclosebtn"><img src="{{ asset('themes/helpyfinder/assets/images/cross-icon.svg') }}" alt="cross"></span>
-    </div>
+
+    @php 
+        $currentDateTime = Carbon::now('Asia/Kolkata');
+        $startDateTime = \Carbon\Carbon::parse($setting->np_start_datetime, 'Asia/Kolkata');
+        $endDateTime = \Carbon\Carbon::parse($setting->np_end_datetime, 'Asia/Kolkata');
+        $showNotification = $currentDateTime->between($startDateTime, $endDateTime);
+    @endphp
+
+    @if ($showNotification)
+        <div class="notification_panel" style="background:{!! $setting->np_nbg_color !!}">
+            <p class="mb-0 p-2 fs-18" style="text-align: center; color:{!! $setting->np_text_color !!}">{!! $setting->np_text !!}
+                <a data-navelement="pencilbanner" data-pagesection="top nav" href="{!! $setting->np_cta_url !!}" target="{{$setting->np_cta_target === 1 ? "_blank" : "_self"}}" style="color:{!! $setting->np_cta_text_color !!}">
+                    <span><u><b>{!! $setting->np_cta_text !!}</b></u></span></a>
+            </p>
+            <!-- <span class="npclosebtn"><img src="{{ asset('themes/helpyfinder/assets/images/cross-icon.svg') }}" alt="cross"></span> -->
+        </div>
+    @endif
 @endif
 <!-- Notification Panel -->
 
