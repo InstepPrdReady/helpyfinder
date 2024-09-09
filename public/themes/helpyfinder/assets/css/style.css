@@ -486,9 +486,12 @@
 
 /* Card CSS */
 .card {
-  --bs-card-bg: var(--bg-white);
+  /* --bs-card-bg: var(--bg-white); */
   border: none;
   border-radius: 10px;
+  background: inherit;
+  display: flex;
+  /* flex-direction: row; */
 }
 
 .card .card-title {
@@ -4040,11 +4043,14 @@ span.npclosebtn img {
   overflow: hidden;
   z-index: 1;
   height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero-banner .banner-content {
   max-width: 820px;
-  margin: 15% auto;
+  margin: 3% auto;
   text-align: center;
 }
 
@@ -4061,6 +4067,27 @@ span.npclosebtn img {
   -webkit-margin-start: auto;
   margin-inline-start: auto;
   z-index: 1;
+}
+.hero-banner .hero-video-section{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    background: rgb(2 7 49 / 85%);
+    height: 100vh;
+}
+.hero-banner .hero-video-section video{
+    height: 100vh;
+    object-fit: cover;
+    width: 100%;
+    z-index: -99;
+    position: absolute;
+}
+
+
+@media (min-width:2000px) {
+  .hero-banner .hero-video-section,.hero-banner .hero-video-section video,.hero-banner{
+    height: 100%;
+  }
 }
 
 .hero-banner .banner-image img {
@@ -4602,6 +4629,10 @@ span.npclosebtn img {
   background-color: var(--color-primary);
   border-radius: 50%;
 }
+.why-choose-section .card {
+  display: flex;
+  flex-direction: row;
+}
 
 /* -----------------------------------------
     About CSS
@@ -4661,7 +4692,6 @@ span.npclosebtn img {
   z-index: 1;
   align-items: center;
   flex-direction: row;
-  flex-wrap: wrap;
   gap: 16px;
 }
 
@@ -5308,6 +5338,27 @@ span.npclosebtn img {
 .pricing-4 .pricing-item:hover .btn-primary {
   color: var(--text-white);
   background-color: var(--bg-white);
+}
+.pricing-item-second {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s ease-out;
+  padding: 40px;
+  z-index: 1;
+  border: 1px solid #ffffff54;
+}
+.pricing-item-second .pricing-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: var(--text-dark);
+}
+.pricing-item-second .pricing-list i {
+  font-size: 16px;
+  margin-inline-end: 10px;
+}
+.pricing-item,.pricing-item-second{
+  width: 100%;
 }
 
 /* -----------------------------------------

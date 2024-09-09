@@ -9,3 +9,6 @@
 .fi-tr-category:before {
     content: "\f385";
 }
+.fi-sr-cross-small:before {
+    content: "\f508";
+}
