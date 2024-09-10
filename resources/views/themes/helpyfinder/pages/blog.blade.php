@@ -8,7 +8,7 @@
 
 <!-- Page title start-->
 <div class="page-title-area pb-100 bg-light bg-img"
-    data-bg-image="http://app.helpyfinder.com/themes/helpyfinder/assets/images/page-title-bg-1.jpg">
+    data-bg-image="http://app.helpyfinder.com/themes/helpyfinder/assets/images/banner/blog.png">
     <div class="container">
         <div class="content text-center">
             <h2>{{$blogsettings->meta_title}}</h2>

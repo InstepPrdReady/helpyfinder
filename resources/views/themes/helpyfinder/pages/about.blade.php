@@ -10,7 +10,7 @@
 @section('content')
 
 <!-- Page title start-->
-<div class="page-title-area pb-100 bg-light bg-img">
+<div class="page-title-area pb-100 bg-light bg-img about-section-main">
     <div class="container">
         <div class="content text-center">
             <h2>{{$aboutsetting->meta_title}}</h2>

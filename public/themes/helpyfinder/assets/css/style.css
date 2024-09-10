@@ -1818,7 +1818,6 @@ button.mfp-close {
   align-items: center;
   border-radius: 50%;
   color: var(--color-primary);
-  background-color: var(--bg-white);
 }
 
 .video-btn:hover {
@@ -2440,8 +2439,8 @@ Lazyload CSS
   flex-direction: column;
   z-index: 1000;
   overflow-y: hidden;
-  /* background-color: var(--color-primary); */
-  background-image: linear-gradient(to right bottom, #ffffff, #efeff8, #dddff0, #cad0ea, #b5c1e3, #a0b2e0, #8aa4de, #7196db, #5783db, #3e70d9, #245bd6, #0146d0);
+  background-color: #000; 
+  /* background-image: linear-gradient(to right bottom, #ffffff, #efeff8, #dddff0, #cad0ea, #b5c1e3, #a0b2e0, #8aa4de, #7196db, #5783db, #3e70d9, #245bd6, #0146d0); */
 }
 
 #preLoader .loader {
@@ -2459,6 +2458,7 @@ Lazyload CSS
 
 #preLoader svg {
   width: 25%;
+  filter: drop-shadow(-1px -1px 28px #ffffff);
 }
 
 @-webkit-keyframes shadowRolling {
@@ -3924,7 +3924,7 @@ body.mobile-menu-active {
   overflow: hidden;
 }
 
-.page-title-area::before {
+.contact-section-main::before {
   content: "";
   background-image: url(http://app.helpyfinder.com/themes/helpyfinder/assets/images/banner/header_image.png);
   display: block;
@@ -3932,7 +3932,21 @@ body.mobile-menu-active {
   background-position-y: center;
   background-size: cover;
   background-repeat: no-repeat;
-  filter: opacity(0.4);
+  filter: opacity(0.3);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  position: absolute;
+}
+.about-section-main::before {
+  content: "";
+  background-image: url(http://app.helpyfinder.com/themes/helpyfinder/assets/images/banner/about.png);
+  display: block;
+  background-position-x: center;
+  background-position-y: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  filter: opacity(0.3);
   width: 100%;
   height: 100%;
   top: 0;
@@ -4072,7 +4086,7 @@ span.npclosebtn img {
     width: 100%;
     position: absolute;
     top: 0;
-    background: rgb(2 7 49 / 85%);
+    background: rgb(0 0 0 / 85%);
     height: 100vh;
 }
 .hero-banner .hero-video-section video{
@@ -4632,6 +4646,9 @@ span.npclosebtn img {
 .why-choose-section .card {
   display: flex;
   flex-direction: row;
+}
+.why-choose-icons img {
+  width: 70%;
 }
 
 /* -----------------------------------------
@@ -7412,4 +7429,118 @@ Authentication CSS
   margin-bottom: 20px;
 }
 
+
+.query-form-modal-fade{
+  backdrop-filter: brightness(0.2);
+}
+
+.query-form-modal-header{
+  flex-direction: column;
+  gap: 10px;
+  border-bottom: none;
+}
+.query-form-modal-header .close-modal-btn{
+  position:absolute;
+  top: 16px;
+  right: 16px;
+  filter: invert(1);
+}
+.query-form-modal-header h1,.query-form-modal-header p{
+  color: #fff;
+}
+.query-form-modal-body{
+  padding:0 24px;
+}
+.query-form-modal .modal-content{
+  background:#000; 
+  border: 2px solid #fff;
+}
+
+
+
+
+
+.circle-container {
+  position: relative;
+  width: 49%;
+  height: 70vh;
+}
+@media (max-width: 768px) {
+  .circle-container {
+    width: 300px;
+    height: 300px;
+  }
+}
+
+
+.circle-container > * {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 10px solid white;
+}
+
+.circle {
+  background: white;
+}
+
+.wave._100 {
+  background-position: 0% 5%;
+}
+.wave-below._100 {
+  clip-path: polygon(0% 110%, 0% 15%, 110% 15%, 110% 110%);
+}
+@keyframes wave-100 {
+  to {
+    background-position: 1200px 5%;
+  }
+}
+
+
+.wave {
+  animation-name: fill-wave, wave-0;
+  animation-duration: 5s, 7s;
+  animation-delay: 0s, 5s;
+  animation-fill-mode: forwards, none;
+  animation-iteration-count: 1, infinite;
+  animation-timing-function: var(--ease-in), var(--ease-out);
+}
+
+.wave._100 {
+  animation-name: fill-wave, wave-100;
+}
+
+.wave-below {
+  animation: 5s var(--ease-in) forwards fill-below;
+}
+.wave-below._100 {
+  animation: 6s -1s var(--ease-in) forwards fill-below;
+}
+.desc._100 {
+  color: white;
+}
+.desc * {
+  animation: 1s 6s both rise-up;
+}
+@keyframes rise-up {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+
+  70% {
+    transform: translateY(-10px);
+  }
+}
+.wave {
+  background: url(https://coiger.github.io/fill-water-animation/wave.svg)
+    repeat-x;
+  opacity: 0.8;
+}
+.wave-below {
+  background-color: #3b46d3;
+}
 /*# sourceMappingURL=style.css.map */

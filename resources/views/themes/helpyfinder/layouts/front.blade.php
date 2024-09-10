@@ -118,6 +118,8 @@
 <link rel="stylesheet" href="{{ asset('themes/helpyfinder/assets/css/vendors/nice-select.css') }}">
 <!-- AOS Animation CSS -->
 <link rel="stylesheet" href="{{ asset('themes/helpyfinder/assets/css/vendors/aos.min.css') }}">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
 <!-- Animate CSS -->
 <link rel="stylesheet" href="{{ asset('themes/helpyfinder/assets/css/vendors/animate.min.css') }}">
 <!-- Main Style CSS -->
@@ -462,6 +464,34 @@
 @endif
 <!-- Notification Panel -->
 
+<!-- popup -->
+<div class="container">
+    <div class="modal fade query-form-modal-fade" id="hsFormPopup" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered   query-form-modal">
+            <div class="modal-content">
+                <div class="modal-header query-form-modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Sounds crazy - right?</h1>
+                    <p>Joint the wait list for the device.</p>
+                    <button type="button" class="btn-close close-modal-btn" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body query-form-modal-body">
+                    <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+                    <script>
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "21495381",
+                        formId: "e427edf3-0d9e-4436-bace-ae892c34f27d"
+                    });
+                    </script>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+</div>
+<!-- popup -->
+
     <!-- Header-area start -->
     <header class="header-area" data-aos="fade-down">
         <!-- Start mobile menu -->
@@ -664,6 +694,8 @@
     <script src="{{ asset('themes/helpyfinder/assets/js/vendors/tilt.jquery.min.js') }}"></script>
     <!-- AOS JS -->
     <script src="{{ asset('themes/helpyfinder/assets/js/vendors/aos.min.js') }}"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
     <!-- Main script JS -->
     <script src="{{ asset('themes/helpyfinder/assets/js/script.js') }}"></script>
 
@@ -684,6 +716,11 @@
             }
         });
     </script>
+    <script type="text/javascript">
+        document.getElementById("openPopup").onclick = function(){ 
+            $('#hsFormPopup').modal('show');
+        }
+    </script>
 
     @if($setting->custom_css)
         <script type="text/javascript">
@@ -694,5 +731,8 @@
     @yield('scripts')
 
     @endif
+    <script>
+  AOS.init();
+</script>
 </body>
 </html>
