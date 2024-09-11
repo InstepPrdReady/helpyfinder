@@ -2439,7 +2439,7 @@ Lazyload CSS
   flex-direction: column;
   z-index: 1000;
   overflow-y: hidden;
-  background-color: #000; 
+  background-color: #fff; 
   /* background-image: linear-gradient(to right bottom, #ffffff, #efeff8, #dddff0, #cad0ea, #b5c1e3, #a0b2e0, #8aa4de, #7196db, #5783db, #3e70d9, #245bd6, #0146d0); */
 }
 
@@ -2456,10 +2456,8 @@ Lazyload CSS
   animation: shadowRolling 2s linear infinite;
 }
 
-#preLoader svg {
-  width: 25%;
-  filter: drop-shadow(-1px -1px 28px #ffffff);
-}
+
+
 
 @-webkit-keyframes shadowRolling {
   0% {
@@ -4440,6 +4438,7 @@ span.npclosebtn img {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   transition-duration: 0.5s;
+  font-size: 24px;
 }
 
 .counter-area .card:hover i {
@@ -7296,6 +7295,14 @@ Authentication CSS
   color: #B3CDE3;
 }
 
+
+.contact-form-heading {
+  margin-bottom: 26px;
+}
+
+.contact-form-heading h4 {
+  font-size: 20px;
+}
 /* -----------------------------------------
     Terms & Conditions CSS
 ----------------------------------------- */
@@ -7456,91 +7463,104 @@ Authentication CSS
   border: 2px solid #fff;
 }
 
-
-
-
-
-.circle-container {
-  position: relative;
-  width: 49%;
-  height: 70vh;
-}
-@media (max-width: 768px) {
-  .circle-container {
-    width: 300px;
-    height: 300px;
-  }
+.loader-container {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    transform: translate(0, 0);
 }
 
-
-.circle-container > * {
-  position: absolute;
-  top: -10px;
-  left: -10px;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  border: 10px solid white;
+.loader-container .loader-body {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 64px;
 }
 
-.circle {
-  background: white;
+.loader-container .animated-layer {
+    position: absolute;
+    left: 0;
+    top: -6px;
+    /* z-index: 2; */
+    width: 100%;
+    height: 100%;
+    -webkit-transform: translate(0, 0%);
+    transform: translate(0, 0%);
+    background: #63c4f4;
+    opacity: 0.7;
 }
 
-.wave._100 {
-  background-position: 0% 5%;
+.loader-container .water_wave {
+    width: 200%;
+    position: absolute;
+    bottom: 100%;
 }
-.wave-below._100 {
-  clip-path: polygon(0% 110%, 0% 15%, 110% 15%, 110% 110%);
+
+.loader-container .water_wave_back {
+    right: 0;
+    fill: #d5f2ff;
+    animation: wave-back 1s infinite linear;
 }
-@keyframes wave-100 {
-  to {
-    background-position: 1200px 5%;
-  }
+
+.loader-container .water_wave_front {
+    left: 0;
+    fill: #63c4f4;
+    margin-bottom: -1px;
+    animation: wave-front 1s infinite linear;
+}
+
+@-webkit-keyframes wave-front {
+    100% {
+        -webkit-transform: translate(-50%, 0);
+        transform: translate(-50%, 0);
+    }
+}
+
+@keyframes wave-front {
+    100% {
+        -webkit-transform: translate(-50%, 0);
+        transform: translate(-50%, 0);
+    }
+}
+
+@-webkit-keyframes wave-back {
+    100% {
+        -webkit-transform: translate(50%, 0);
+        transform: translate(50%, 0);
+    }
+}
+
+@keyframes wave-back {
+    100% {
+        -webkit-transform: translate(50%, 0);
+        transform: translate(50%, 0);
+    }
+}
+
+.logo-container{
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    & svg{
+      width: 50%;
+    }
+}
+
+.page-body-content{
+  padding-top: 30px;
+}
+.page-body-content a{
+  color:var(--color-primary);
 }
 
 
-.wave {
-  animation-name: fill-wave, wave-0;
-  animation-duration: 5s, 7s;
-  animation-delay: 0s, 5s;
-  animation-fill-mode: forwards, none;
-  animation-iteration-count: 1, infinite;
-  animation-timing-function: var(--ease-in), var(--ease-out);
-}
-
-.wave._100 {
-  animation-name: fill-wave, wave-100;
-}
-
-.wave-below {
-  animation: 5s var(--ease-in) forwards fill-below;
-}
-.wave-below._100 {
-  animation: 6s -1s var(--ease-in) forwards fill-below;
-}
-.desc._100 {
-  color: white;
-}
-.desc * {
-  animation: 1s 6s both rise-up;
-}
-@keyframes rise-up {
-  from {
-    transform: translateY(100px);
-    opacity: 0;
-  }
-
-  70% {
-    transform: translateY(-10px);
-  }
-}
-.wave {
-  background: url(https://coiger.github.io/fill-water-animation/wave.svg)
-    repeat-x;
-  opacity: 0.8;
-}
-.wave-below {
-  background-color: #3b46d3;
-}
 /*# sourceMappingURL=style.css.map */

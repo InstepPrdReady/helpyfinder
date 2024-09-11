@@ -73,6 +73,10 @@
             <div class="col-lg-6 mb-40" data-aos="fade-up">
                 <!--hs form-->
                 <div style="width: 100% !important; border: 0;" class="Contact-hubspotForm">
+                    <div class="contact-form-heading">
+                        <h4>Have Questions? Contact Us!</h4>
+                    </div>
+
                     @shortcode('hubspotForm')
                 </div>
             </div>

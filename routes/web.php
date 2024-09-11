@@ -168,7 +168,7 @@ Route::middleware(['XSS'])->group(function () {
 });
 Route::group(['middleware' => 'setlang'], function () {
 
-    Route::get('/post/{slug}',  [PostController::class, 'show_slug']);
+    Route::get('/blog/{slug}',  [PostController::class, 'show_slug']);
     Route::get('/project/{slug}',  [ProjectController::class, 'show_slug']);
     Route::get('/{slug}',  [PageController::class, 'show_slug']);
 });

@@ -201,7 +201,7 @@
             el: ".swiper-scrollbar"
         },
     })
-    
+
     // Screenshot Slider all
     $(".screenshot-slider").each(function () {
         var id = $(this).attr("id");
@@ -290,7 +290,7 @@
     // Sync testimonial slider 1
     testimonialSlider1.controller.control = testimonialThumb;
     testimonialThumb.controller.control = testimonialSlider1;
-    
+
     // Testimonial Slider 2
     var testimonialSlider2 = new Swiper("#testimonial-slider-2", {
         speed: 1200,
@@ -508,7 +508,7 @@
     /*============================================
         Hover Tilt
     ============================================*/
-    if($('.js-tilt').length) {
+    if ($('.js-tilt').length) {
         $('.js-tilt').tilt({
             glare: true,
             maxGlare: .5,
@@ -653,18 +653,37 @@
         $("#minutes .time").html(minutes);
         $("#seconds .time").html(seconds);
     }
-    setInterval(function() {
+    setInterval(function () {
         makeTimer()
     }, 0);
+
+
+    //pre-loader animation wave animation
+    var water = document.getElementById("animated-layer");
+    var percent = 0;
+    var interval = 0;
+
+    interval = setInterval(function () {
+        console.log((percent), "PER::::")
+        water.style.transform = 'translate(0' + ',' + (percent) + '%)';
+        if (percent == 100) {
+            console.log("Completed: ", percent)
+            clearInterval(interval);
+        }
+        percent++;
+    }, 20);
+
+    //hide pre-loader
+    $("#preLoader").delay(2000).fadeOut();
 
 })(jQuery);
 
 $(window).on("load", function () {
-    const delay = 1000;
+    const delay = 2000;
     /*============================================
         Preloader
     ============================================*/
-    $("#preLoader").delay(delay).fadeOut();
+
 
     /*============================================
         Aos animation
@@ -672,7 +691,7 @@ $(window).on("load", function () {
     var aosAnimation = function () {
         AOS.init({
             easing: "ease",
-            duration: 1500,
+            duration: 1000,
             once: true,
             offset: 0,
             disable: 'mobile'
@@ -686,3 +705,4 @@ $(window).on("load", function () {
         aosAnimation();
     }
 })
+

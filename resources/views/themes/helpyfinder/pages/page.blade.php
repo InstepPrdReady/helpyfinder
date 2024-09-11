@@ -18,8 +18,11 @@
     </div>
   </div>
 </div>
-
+<div class="page-body-content">
+<div class="container">
   {!!$page->body!!}
+</div>
+</div>
 
 @endsection
 

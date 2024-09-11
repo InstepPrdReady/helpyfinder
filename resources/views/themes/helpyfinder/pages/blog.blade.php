@@ -34,7 +34,7 @@
                 <div class="col-md-6 col-lg-4" data-aos="fade-up">
                     <article class="card mb-25 radius-md">
                         <div class="card-img">
-                            <a href="{{URL::to('/')}}/post/{{$post->slug}}" target="_self" title="Link"
+                            <a href="{{URL::to('/')}}/blog/{{$post->slug}}" target="_self" title="Link"
                                 class="lazy-container ratio ratio-1-1">
                                 <img class="lazyload" src="/public/img/loading-blog.gif"
                                     data-src="{{$post->photo ? '/public/images/media/' . $post->photo->file : '/public/img/200x200.png'}}"
@@ -43,11 +43,11 @@
                         </div>
                         <div class="card-content radius-md p-25 text-center bg-white">
                             <h5 class="card-title lc-2 mb-15">
-                                <a href="{{URL::to('/')}}/post/{{$post->slug}}" target="_self" title="Link">
+                                <a href="{{URL::to('/')}}/blog/{{$post->slug}}" target="_self" title="Link">
                                     {{$post->title}}
                                 </a>
                             </h5>
-                            <a href="{{URL::to('/')}}/post/{{$post->slug}}" class="btn-text color-primary" target="_self"
+                            <a href="{{URL::to('/')}}/blog/{{$post->slug}}" class="btn-text color-primary" target="_self"
                                 title="Read More">Read
                                 More</a>
                         </div>
