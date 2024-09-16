@@ -16,29 +16,22 @@ use DB;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Language;
 use View;
-
+use Illuminate\Pagination\Paginator;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 class PostController extends Controller
 {
-    //
-
 
     public function index(Request $request)
     {
-
         $langs = Language::all();
         $lang = Language::where('code', $request->language)->first();
         $lang_id = $lang->id;
 
-        //return $lang;
-
-        $data['posts'] = Post::where('language_id', $lang_id)->orderBy('id', 'DESC')->paginate(10);
-
-        $data['lang_id'] = $lang_id;
-
-        return view('post.post-index', $data, compact('langs'));
-
-
+        $posts = Post::where('language_id', $lang_id)->orderBy('id', 'DESC')->paginate(10);
+        $posts->withPath(route('post.index'));
+        $posts->appends(['language' => 'en']);
+        return view('post.post-index', compact('posts'),compact('langs'));
     }
 
     public function create(Request $request)

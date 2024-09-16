@@ -51,7 +51,7 @@
                 @include('includes.form-errors')
 
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="col-md-12 ssss">
 
                         <form action="{{route('page.store')}}" method="POST" enctype="multipart/form-data">
                             @csrf
@@ -107,12 +107,26 @@
                                             </div>
                                         </div>
                                     </div>   
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <strong>Full Width</strong>
+                                                <input type="radio" name="page_full_width" value="1"> Yes &nbsp;&nbsp;&nbsp;
+                                                <input type="radio" name="page_full_width" value="0"> No
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <strong> Header Banner</strong>
+                                                <input type="radio" name="header_banner_view" value="1">Enable &nbsp;&nbsp;&nbsp;
+                                                <input type="radio" name="header_banner_view" checked value="0"> Disable
+                                            </div>
+                                        </div>
+                                    </div>
                                     
-
-
-                                
                                 </div>
-  
 
                                 <div class="col-xs-12 col-sm-12 col-md-12 text-right">
                                     <button type="submit" class="btn btn-primary">{{clean( trans('instep-backend.create') , array('Attr.EnableID' => true))}}</button>

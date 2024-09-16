@@ -85,7 +85,24 @@
                                         </div>
                                     </div>
 
-                                    
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <strong>Full Width</strong>
+                                                <input type="radio" name="page_full_width" value="1" @if($page->page_full_width == 1) checked @endif > Yes &nbsp;&nbsp;&nbsp;
+                                                <input type="radio" name="page_full_width" value="0" @if($page->page_full_width == 0) checked @endif > No 
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <strong> Header Banner</strong>
+                                                <input type="radio" name="header_banner_view" value="1" @if($page->header_banner_view == 1) checked @endif > Yes &nbsp;&nbsp;&nbsp;
+                                                <input type="radio" name="header_banner_view" value="0" @if($page->header_banner_view == 0) checked @endif > No 
+                                            </div>
+                                        </div>
+
+                                    </div>
 
                                 </div>
 					   

@@ -103,6 +103,12 @@
                     </tbody>
                 </table>
 
+                {{-- Render pagination links --}}
+                <div class="pagination">
+                    {{ $posts->links() }}
+                </div>
+                {{-- Render pagination links --}}
+
                 </form>
 
             </div>

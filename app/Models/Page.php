@@ -16,8 +16,9 @@ class Page extends Model
         'slug',
         'body',
         'meta_title',
-        'meta_description'
-
+        'meta_description',
+        'page_full_width',
+        'header_banner_view'
     ];
 
     public function user() {

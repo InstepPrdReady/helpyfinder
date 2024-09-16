@@ -655,7 +655,7 @@
                                         <a href="/about-us" target="_self" title="link">About Us</a>
                                     </li>
                                     <li>
-                                        <a href="#" target="_self" title="link">Our Mission</a>
+                                        <a href="#" id="openPopup" target="_self" title="link">Our Mission</a>
                                     </li>
                                     <li>
                                         <a href="#" target="_self" title="link">How It Work</a>
@@ -693,11 +693,11 @@
             <div class="copy-right-area border-top ptb-30">
                 <div class="container">
                     <div class="social-link">
-                        <a href="https://www.instagram.com/" target="_blank" title="Link"><i
+                        <a href="https://www.instagram.com/helpyfinder.tm/?igsh=ZmJiOHQ4YmI4NTJm" target="_blank" title="Link"><i
                                 class="fab fa-instagram"></i></a>
-                        <a href="https://www.dribbble.com/" target="_blank" title="Link"><i class="fab fa-dribbble"></i></a>
-                        <a href="https://www.twitter.com/" target="_blank" title="Link"><i class="fab fa-twitter"></i></a>
-                        <a href="https://www.youtube.com/" target="_blank" title="Link"><i class="fab fa-youtube"></i></a>
+                        <a href=https://www.facebook.com/helpyfinder/" target="_blank" title="Link"><i class="fab fa-facebook"></i></a>
+                        <a href="https://x.com/i/flow/login?redirect_after_login=%2FHelpyFinder" target="_blank" title="Link"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.youtube.com/@helpyfinder8408" target="_blank" title="Link"><i class="fab fa-youtube"></i></a>
                     </div>
                     <div class="copy-right-content mt-20">
                         <span>

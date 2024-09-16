@@ -59,14 +59,14 @@
                         @foreach($recent_posts as $post)
                             <article class="article-item mb-30">
                                 <div class="image">
-                                    <a href="{{URL::to('/')}}/post/{{$post->slug}}" class="lazy-container ratio ratio-5-4">
+                                    <a href="{{URL::to('/')}}/blog/{{$post->slug}}" class="lazy-container ratio ratio-5-4">
                                         <img class="lazyload" src="{{ route('home') }}/{{$post->photo ? '/images/media/' . $post->photo->file : '/img/200x200.png'}}"
                                             data-src="{{ route('home') }}/{{$post->photo ? '/images/media/' . $post->photo->file : '/img/200x200.png'}}" alt="Blog Image">
                                     </a>
                                 </div>
                                 <div class="content">
                                     <h6 class="lc-2">
-                                        <a href="{{URL::to('/')}}/post/{{$post->slug}}">{{$post->title}}</a>
+                                        <a href="{{URL::to('/')}}/blog/{{$post->slug}}">{{$post->title}}</a>
                                     </h6>
                                     <ul class="info-list">
                                         <li><i class="fal fa-user"></i>Admin</li>
@@ -76,7 +76,7 @@
                             </article>
                         @endforeach
                     </div>
-                    <div class="widget widget-blog-categories mb-30 p-30 border radius-md">
+                    <div class="widget widget-blog-categories mb-30 p-30 border radius-md" style="display:none;">
                         <h4 class="title mb-15">Categories</h4>
                         <ul class="list-unstyled m-0">
                             @foreach($post_categories as $category)
