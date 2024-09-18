@@ -146,7 +146,7 @@ class HomeController extends Controller
         $blogs = $data['posts'];
 
         $blogsCollection = collect($blogs);
-        $perPage = 10;
+        $perPage = 12;
         $currentPage = Paginator::resolveCurrentPage('page');
         $currentPageItems = $blogsCollection->slice(($currentPage - 1) * $perPage, $perPage)->all();
         $paginatedBlogs = new LengthAwarePaginator($currentPageItems, $blogsCollection->count(), $perPage, $currentPage);

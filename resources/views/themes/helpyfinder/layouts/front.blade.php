@@ -51,16 +51,6 @@
 
     @if($setting->analytics_switch == 1)
 
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id={{$setting->analytics}}"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag() { dataLayer.push(arguments); }
-            gtag('js', new Date());
-
-            gtag('config', '{{$setting->analytics}}');
-        </script>
-
         <!-- Google Tag Manager -->
         <script>(function (w, d, s, l, i) {
                 w[l] = w[l] || []; w[l].push({
@@ -69,7 +59,7 @@
                 }); var f = d.getElementsByTagName(s)[0],
                     j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
                         'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
-            })(window, document, 'script', 'dataLayer', '{{$setting->gtm_analytics}}');</script>
+            })(window, document, 'script', 'dataLayer', '{{$setting->analytics}}');</script>
         <!-- End Google Tag Manager -->
 
     @endif
@@ -487,15 +477,31 @@
                 <div class="notification_panel" style="background:{!! $setting->np_nbg_color !!}">
                     <p class="mb-0 p-2 fs-18" style="text-align: center; color:{!! $setting->np_text_color !!}">
                         {!! $setting->np_text !!}
-                        <a data-navelement="pencilbanner" data-pagesection="top nav" href="{!! $setting->np_cta_url !!}"
+
+                        @if ($setting->np_cta_url !='#')
+                            <a data-navelement="pencilbanner" data-pagesection="top nav" href="{!! $setting->np_cta_url !!}"
                             target="{{$setting->np_cta_target === 1 ? "_blank" : "_self"}}"
                             style="color:{!! $setting->np_cta_text_color !!}">
-                            <span><u><b>{!! $setting->np_cta_text !!}</b></u></span></a>
+                            <span><b>{!! $setting->np_cta_text !!}</b></span></a>
+                        @else
+                            <a data-navelement="pencilbanner" data-pagesection="top nav" href="#" id="openPopup"
+                            style="color:{!! $setting->np_cta_text_color !!}">
+                            <span><b>{!! $setting->np_cta_text !!}</b></span></a>
+                        @endif
                     </p>
                     <!-- <span class="npclosebtn"><img src="{{ asset('themes/helpyfinder/assets/images/cross-icon.svg') }}" alt="cross"></span> -->
                 </div>
             @endif
         @endif
+        <style>
+            a#openPopup {
+                color: #ffffff;
+                background: #0065ff;
+                padding: 7px 10px;
+                border-radius: 20px;
+                text-decoration: none;
+            }
+        </style>
         <!-- Notification Panel -->
 
         <!-- popup -->
@@ -566,13 +572,8 @@
                                 <img src="{{ asset('themes/helpyfinder/assets/images/logo/logo.svg') }}" alt="Brand Logo">
                             </a>
                             <ul id="mainMenu" class="navbar-nav mobile-item align-items-xl-center">
-
-
                                 <li class="nav-item">
                                     <a href="/" class="nav-link toggle">Home </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/about-us">About Us</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="/blog">Blog</a>
@@ -614,16 +615,13 @@
                                 <h5>Useful Links</h5>
                                 <ul class="footer-links">
                                     <li>
-                                        <a href="#" target="_self" title="link">Download App</a>
+                                        <a href="/blog" target="_self" title="link">Blog</a>
                                     </li>
                                     <li>
-                                        <a href="#" target="_self" title="link">Registration</a>
+                                        <a href="/family-help" target="_self" title="link">Family Help</a>
                                     </li>
                                     <li>
-                                        <a href="#" target="_self" title="link">Business</a>
-                                    </li>
-                                    <li>
-                                        <a href="/privacy" target="_self" title="link">Privacy Policy</a>
+                                        <a href="/nearby-help" target="_self" title="link">Nearby Help</a>
                                     </li>
                                 </ul>
                             </div>
@@ -633,17 +631,15 @@
                                 <h5>Features</h5>
                                 <ul class="footer-links">
                                     <li>
-                                        <a href="#" target="_self" title="link">Paid Features</a>
+                                        <a href="/success-stories" target="_self" title="link">Success Stories</a>
                                     </li>
                                     <li>
-                                        <a href="#" target="_self" title="link">Management</a>
+                                        <a href="/how-it-works" target="_self" title="link">How It Works</a>
                                     </li>
                                     <li>
-                                        <a href="#" target="_self" title="link">Tracking</a>
+                                        <a href="/community-impact" target="_self" title="link">Community Impact</a>
                                     </li>
-                                    <li>
-                                        <a href="#" target="_self" title="link">Invoice</a>
-                                    </li>
+                                   
                                 </ul>
                             </div>
                         </div>
@@ -652,13 +648,10 @@
                                 <h5>Explore</h5>
                                 <ul class="footer-links">
                                     <li>
-                                        <a href="/about-us" target="_self" title="link">About Us</a>
-                                    </li>
-                                    <li>
                                         <a href="#" id="openPopup" target="_self" title="link">Our Mission</a>
                                     </li>
                                     <li>
-                                        <a href="#" target="_self" title="link">How It Work</a>
+                                        <a href="/privacy" target="_self" title="link">Privacy Policy</a>
                                     </li>
                                     <li>
                                         <a href="/terms-and-conditions" target="_self" title="link">Terms & Conditions</a>

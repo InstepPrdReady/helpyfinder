@@ -58,7 +58,7 @@
         </div>
 
         {{-- Render pagination links --}}
-        <div class="pagination">
+        <div class="blog-pagination">
             {{ $posts->links() }}
         </div>
     </div>

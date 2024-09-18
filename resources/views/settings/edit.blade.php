@@ -395,17 +395,17 @@
                                         <br>
 
                                         <strong>Text</strong>
-                                        <input type="text" name="np_text" value="{{$setting->np_text}}" class="form-control">
+                                        <input type="text" name="np_text" value="{{$setting->np_text}}" class="form-control" required>
                                         <br>
                                         <strong>Text Color</strong>
                                         <input type="color" name="np_text_color" value="{{$setting->np_text_color}}" class="form-control">
                                         <br>
 
                                         <strong>CTA Text</strong>
-                                        <input type="text" name="np_cta_text" value="{{$setting->np_cta_text}}" class="form-control">
+                                        <input type="text" name="np_cta_text" value="{{$setting->np_cta_text}}" class="form-control" required>
                                         <br>
                                         <strong>CTA Url</strong>
-                                        <input type="text" name="np_cta_url" value="{{$setting->np_cta_url}}" class="form-control">
+                                        <input type="text" name="np_cta_url" value="{{$setting->np_cta_url}}" class="form-control" required>
                                         <br>
 
                                         <strong>CTA Target</strong>

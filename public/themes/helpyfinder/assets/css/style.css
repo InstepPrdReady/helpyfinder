@@ -6310,6 +6310,12 @@ span.npclosebtn img {
   background-color: rgba(var(--color-primary-rgb), 0.9);
 }
 
+.blog-pagination{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* -----------------------------------------
     Video CSS
 ----------------------------------------- */
