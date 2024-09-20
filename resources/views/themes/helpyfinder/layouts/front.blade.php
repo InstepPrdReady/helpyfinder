@@ -648,7 +648,7 @@
                                 <h5>Explore</h5>
                                 <ul class="footer-links">
                                     <li>
-                                        <a href="#" id="openPopup" target="_self" title="link">Our Mission</a>
+                                        <a href="/" target="_self" title="link">Home</a>
                                     </li>
                                     <li>
                                         <a href="/privacy" target="_self" title="link">Privacy Policy</a>

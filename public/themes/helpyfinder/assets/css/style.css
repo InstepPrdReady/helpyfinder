@@ -7608,6 +7608,7 @@ Authentication CSS
 
 .page-body-content a {
   color:#fff;
+  word-break: break-all;
 }
 .page-body-content ul, .page-body-content ol {
   padding-left: 17px;
