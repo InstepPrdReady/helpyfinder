@@ -7360,6 +7360,9 @@ Authentication CSS
   -webkit-padding-start: 20px;
   padding-inline-start: 20px;
 }
+.page-body-content a:hover {
+  color: #0d6efd;
+}
 
 /* -----------------------------------------
 	Coming Soon CSS
@@ -7754,4 +7757,13 @@ Authentication CSS
   max-width: none;
 }
 /* success stories */
+
+section.hero-banner.discover-how-helpyfinder-work {
+  min-height:unset !important;
+}
+section.hero-banner.discover-how-helpyfinder-work>.container {
+  min-height:unset !important;
+}
+
+
 

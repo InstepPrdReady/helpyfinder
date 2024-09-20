@@ -36,8 +36,8 @@
                         <div class="card-img">
                             <a href="{{URL::to('/')}}/blog/{{$post->slug}}" target="_self" title="Link"
                                 class="lazy-container ratio ratio-1-1">
-                                <img class="lazyload" src="/public/img/loading-blog.gif"
-                                    data-src="{{$post->photo ? '/public/images/media/' . $post->photo->file : '/public/img/200x200.png'}}"
+                                <img class="lazyload" src="{{$post->photo ? '/images/media/' . $post->photo->file : '/img/200x200.png'}}"
+                                    data-src="{{$post->photo ? '/images/media/' . $post->photo->file : '/img/200x200.png'}}"
                                     alt="{{$post->title}}">
                             </a>
                         </div>

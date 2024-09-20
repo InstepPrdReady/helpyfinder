@@ -24,46 +24,8 @@
 <!-- Page title end-->
 
 <!-- Contact-area start -->
-<div class="contact-area pt-100 pb-60">
+<div class="contact-area pt-100">
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-4 col-sm-6 d-flex">
-                <div class="card mb-30 color-1" data-aos="fade-up" data-aos-delay="100">
-                    <div class="icon">
-                        {!!$contactsetting->box_icon1!!}
-                    </div>
-                    <div class="card-text">
-                        <p>{!!$contactsetting->box_title1!!}</p>
-                        {!!$contactsetting->box_html1!!}
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 d-flex">
-                <div class="card mb-30 color-2" data-aos="fade-up" data-aos-delay="200">
-                    <div class="icon">
-                        {!!$contactsetting->box_icon2!!}
-                    </div>
-                    <div class="card-text">
-                        <p>{!!$contactsetting->box_title2!!}</p>
-                        {!!$contactsetting->box_html2!!}
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6 d-flex">
-                <div class="card mb-30 color-3" data-aos="fade-up" data-aos-delay="300">
-                    <div class="icon">
-                        {!!$contactsetting->box_icon3!!}
-                    </div>
-                    <div class="card-text">
-                        <p>{!!$contactsetting->box_title3!!}</p>
-                        {!!$contactsetting->box_html3!!}
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="pb-70"></div>
-
         <div class="row gx-xl-5">
             <div class="section-title title-center mb-50" data-aos="fade-up">
                 <h2 class="title mb-0">

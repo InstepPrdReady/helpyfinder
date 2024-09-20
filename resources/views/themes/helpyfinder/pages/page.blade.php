@@ -6,7 +6,7 @@
 @section('content')
 
 <div class="page-title-area pb-100 bg-light bg-img @if($page->header_banner_view == 0) disable-header-banner @endif"
-  data-bg-image="http://app.helpyfinder.com/themes/helpyfinder/assets/images/page-title-bg-1.jpg">
+  data-bg-image="/themes/helpyfinder/assets/images/banner/page-title-bg.png" style="object-fit: cover; background-position: center;">
   <div class="container">
     <div class="content text-center">
       <h2>{{$page->meta_title}}</h2>

@@ -606,8 +606,7 @@
                                             alt="Brand Logo">
                                     </a>
                                 </div>
-                                <p>Indignation and dislike men who are so beguiled and demoralized by the charms of pleasure
-                                    of the moment, so blinded by desire that they cannot foresee.</p>
+                                <p>Get real-time safety alerts and assistance from family and nearby users with just a tap. Download the app now and safeguard what matters most.</p>
                             </div>
                         </div>
                         <div class="col-lg-2 col-md-6 col-sm-6">
@@ -688,13 +687,13 @@
                     <div class="social-link">
                         <a href="https://www.instagram.com/helpyfinder.tm/?igsh=ZmJiOHQ4YmI4NTJm" target="_blank" title="Link"><i
                                 class="fab fa-instagram"></i></a>
-                        <a href=https://www.facebook.com/helpyfinder/" target="_blank" title="Link"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.facebook.com/helpyfinder/" target="_blank" title="Link"><i class="fab fa-facebook"></i></a>
                         <a href="https://x.com/i/flow/login?redirect_after_login=%2FHelpyFinder" target="_blank" title="Link"><i class="fab fa-twitter"></i></a>
                         <a href="https://www.youtube.com/@helpyfinder8408" target="_blank" title="Link"><i class="fab fa-youtube"></i></a>
                     </div>
                     <div class="copy-right-content mt-20">
                         <span>
-                            Copyright <i class="fal fa-copyright"></i><span id="footerDate"></span> <a href="#"
+                            Copyright <i class="fal fa-copyright"></i><span id="footerDate"></span> <a href="/"
                                 target="_self" title="HelpyFinder" class="color-primary">HelpyFinder</a>. All Rights
                             Reserved
                         </span>
